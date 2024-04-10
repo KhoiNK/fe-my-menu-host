@@ -7,25 +7,8 @@ module.exports = {
   entry: './src/index.tsx',
   devtool: 'source-map',
   output: {
-    filename: 'remoteEntry.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
-  },
-  devServer: {
-    hot: true,
-    port: 3000,
-    open: true,
-    compress: true,
-    static: {
-      directory: path.join(__dirname, 'dist')
-    },
-    watchFiles: [path.resolve(__dirname, '..')],
-    client: {
-      overlay: {
-        errors: false,
-        warnings: false,
-        runtimeErrors: true,
-      },
-    },
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
