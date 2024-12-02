@@ -1,3 +1,4 @@
+const webpack = require('webpack'); 
 const { merge } = require("webpack-merge");
 const common = require("./webpack.config.js");
 
@@ -10,5 +11,11 @@ module.exports = merge(common, {
       chunks: 'all',
     },
   },
-  plugins: common.plugins.map(plugin => plugin).concat(new BundleAnalyzerPlugin())
+  plugins: [
+    ...common.plugins.map(plugin => plugin),
+    new BundleAnalyzerPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    })
+  ]
 });
