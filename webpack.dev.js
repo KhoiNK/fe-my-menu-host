@@ -1,5 +1,6 @@
+const webpack = require('webpack'); 
 const path = require("path");
-
+require("dotenv").config({ path: path.join(__dirname, ".env.staging") });
 const { merge } = require("webpack-merge");
 const common = require("./webpack.config.js");
 
@@ -11,9 +12,9 @@ module.exports = merge(common, {
     open: true,
     compress: true,
     static: {
-      directory: path.join(__dirname, 'dist')
+      directory: path.join(__dirname, "dist"),
     },
-    watchFiles: [path.resolve(__dirname, '..')],
+    watchFiles: [path.resolve(__dirname, "..")],
     client: {
       overlay: {
         errors: false,
@@ -22,4 +23,10 @@ module.exports = merge(common, {
       },
     },
   },
+  plugins: [
+    ...common.plugins.map((plugin) => plugin),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    }),
+  ],
 });

@@ -1,0 +1,14 @@
+{
+    "login.title": "Login",
+    "login.description": "To get started, please enter your username and password",
+    "login.input.mobile.placeholder": "Enter your username",
+    "login.input.mobile.errorMessage.required": "Please enter your username",
+    "login.input.mobile.errorMessage.minLength": "Please enter at least 3 characters",
+    "login.input.password.errorMessage.required": "Please enter your password",
+    "login.input.password.errorMessage.minLength": "Please enter at least 6 characters",
+    "login.input.password.placeholder": "Enter your password",
+    "login.link.forgotPassword": "Forgot password",
+    "login.button.submit": "Login",
+    "login.text.or": "Or",
+    "login.button.signup": "Open an account"
+}

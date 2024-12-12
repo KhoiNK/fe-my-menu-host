@@ -1,0 +1,12 @@
+{
+  "en": {
+    "login.title": "Pay with Endcash",
+    "login.description": "Pay with Endcash",
+    "login.input.mobile.placeholder": "Enter your phone number",
+    "login.input.password.placeholder": "Enter your password",
+    "login.link.forgotPassword": "Forgot password",
+    "login.button.submit": "Next",
+    "login.text.or": "or",
+    "login.button.signup": "Open an account"
+  }
+}
