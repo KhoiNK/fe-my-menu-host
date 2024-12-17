@@ -2,12 +2,10 @@ name: Azure Static Web Apps CI/CD
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, dev]
   pull_request:
     types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+    branches: [main, dev]
 
 jobs:
   build_and_deploy_job:
@@ -61,3 +59,4 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: "close"
+          skip_deploy_on_missing_secrets: true
